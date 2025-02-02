@@ -24,7 +24,7 @@ class Game:
         
         self.running = True
 
-        self.font = pygame.font.Font('data/font/Roboto-Bold.ttf', 32)
+        self.font = pygame.font.Font('code/data/font/Roboto-Bold.ttf', 32)
 
 
     # создание спрайтов
@@ -39,10 +39,9 @@ class Game:
 
         # создадим ball
         self.ball = Ball(self, self.ai_settings)
-        self.all_sprites.add(self.ball)
 
         # инициализация класса событий
-        self.event_game = EventGame(self, self.lebron)
+        self.event_game = EventGame(self)
 
     # события игры
     def events(self):
@@ -102,3 +101,5 @@ class Game:
             self.screen.blit(play_button.image, play_button.rect)
             self.clock.tick(self.ai_settings.fps)
             pygame.display.update()
+
+
